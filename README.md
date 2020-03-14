@@ -2,6 +2,10 @@
 
 This document outlines how to use the unit testing framework implemented by this code. This is a very simple testing framework that does not catch signals or exceptions. It is intended solely for the purpose of testing individual functions to verify their behavior. It is not the intention of this framework to verify that different units interact properly. 
 
+I built this for my own use on other projects. If you want to make suggestions or report a bug, please do so by all means through github where this source code is hosted.
+
+To quick start this, download it and simply run make. It should all build and run if you are using a fairly modern C compiler. There should be no system dependencies and very few dependencies at all. This framework does use the standard library and I consider that a deficiency. However it works well enough for what I need and I am currently using it with toi2. That is the Toy Object Interpreter. It's a pet project that keeps me out the bars at night. 
+
 A test suite is a stand-alone program that consists of exactly one file. They should rarely need to link with other modules. To do so defeats isolating the code so that it can be tested in the simplest way that is practical. Code that needs to be linked with a lot of other modules cannot be considered "testable" using this framework.
 
 The testing header should be included as the first include in all of the tests. The header contains all of the code that is common to all of the testing, such as functions to print results and identify tests. It has definitions and includes that are required for the testing infrastructure. Each test file is a stand-alone program that has a minimum of external dependencies. An individual test file should not need many other includes other than the ones supplied in the unit_tests header, except for includes that contain mocks and stubs.
