@@ -595,7 +595,7 @@ static inline void unit_print(const char *preamble,
         } \
     } while(0)
 
-#define assert_buffer_not_equal(s, p1, p2) \
+#define assert_buffer_not_equal(p1, p2, s) \
     do { \
         int val; \
         if(0 == (val = memcmp((p1), (p2), (s)))) { \
